@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - JSON Data Processing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>SmartLearn Portal</h1>
+        <p>Participant: MALENI</p>
+    </header>
+
+    <main class="container">
+        <h2>JSON Serialization & Processing</h2>
+        <p class="subtitle">Object Mapping and Data Serialization Filters</p>
+
+        <div class="action-center">
+            <button type="button" id="processJsonBtn">Process JSON Data Stream</button>
+        </div>
+
+        <div class="json-workspace">
+            <div class="panel">
+                <h3>Incoming RAW JSON Payload</h3>
+                <pre id="rawJsonDisplay">// Click the button to view the raw data stream...</pre>
+            </div>
+            
+            <div class="panel">
+                <h3>Processed & Cleaned Object Stream</h3>
+                <pre id="processedJsonDisplay">// Click the button to view parsed output updates...</pre>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
