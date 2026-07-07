@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - Live Search Filter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>SmartLearn Portal</h1>
+        <p>Participant: MALENI</p>
+    </header>
+
+    <main class="container">
+        <h2>Institutional Course Finder</h2>
+        <p class="subtitle">Real-Time Client-Side Data Stream Filter Matcher</p>
+
+        <div class="search-box-wrapper">
+            <input type="text" id="courseSearchInput" placeholder="Type to filter courses by title, code, or department..." aria-label="Course Search">
+        </div>
+
+        <div id="courseCatalogGrid" class="catalog-grid">
+            </div>
+        
+        <div id="noResultsMsg" class="empty-state-alert">
+            🔍 No courses match your current search terms.
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
