@@ -1,0 +1,107 @@
+/* Custom Global Design Tokens Mapping Root Environment variables */
+:root {
+    --bg-surface: #f8fafc;
+    --bg-card: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --accent-color: #0284c7;
+    --border-color: #e2e8f0;
+}
+
+/* Dark Theme Variant Rules Matrix */
+[data-theme="dark"] {
+    --bg-surface: #0f172a;
+    --bg-card: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-color: #38bdf8;
+    --border-color: #334155;
+}
+
+/* Base Engine Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Workspace Central Card Layout Component */
+.theme-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    max-width: 450px;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.card-header p {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.card-body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 1.5rem 0;
+}
+
+code {
+    background-color: rgba(2, 132, 199, 0.1);
+    color: var(--accent-color);
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Control Element Infrastructure Box */
+.toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.mode-label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.toggle-btn {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.toggle-btn:hover {
+    opacity: 0.9;
+}
