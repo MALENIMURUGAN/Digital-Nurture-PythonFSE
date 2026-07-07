@@ -1,0 +1,138 @@
+/* =========================================================================
+   HANDS-ON 2: ADVANCED LAYOUTS — FLEXBOX, CSS GRID & RESPONSIVENESS
+   Participant: MALENI
+   ========================================================================= */
+
+/* Global Clean Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Flexbox Header Positioning Layout */
+.main-header {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+/* Flexbox Statistics Bar Implementation */
+.stats-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.stat-card {
+    background-color: #ffffff;
+    flex: 1 1 calc(25% - 1rem); 
+    min-width: 200px;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-card h3 {
+    font-size: 0.9rem;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.stat-card .stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0284c7;
+    margin-top: 0.5rem;
+}
+
+/* Advanced Two-Column CSS Grid Layout System */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 1.5rem;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.class-item {
+    border-left: 4px solid #0284c7;
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+.class-item h4 {
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.class-item p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.notification-card ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.notification-card ul li {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+/* Page Base Sticky Footer Layout */
+.main-footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* Media Query for Responsive Mobile Devices */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Collapses columns into a stack on mobile */
+    }
+    .stats-bar {
+        flex-direction: column;
+    }
+    .stat-card {
+        flex: 1 1 100%;
+    }
+}
