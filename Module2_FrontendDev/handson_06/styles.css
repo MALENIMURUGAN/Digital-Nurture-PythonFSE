@@ -1,0 +1,125 @@
+/* Global Cleanups */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+}
+
+.main-header {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #1e293b;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+/* Action Control Bars */
+.action-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+#fetchUsersBtn {
+    background-color: #0284c7;
+    color: #ffffff;
+    border: none;
+    padding: 0.85rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 4px rgba(2, 132, 199, 0.2);
+}
+
+#fetchUsersBtn:hover {
+    background-color: #0369a1;
+}
+
+/* Loading Spinner Text */
+.loading-spinner {
+    text-align: center;
+    font-weight: 500;
+    color: #0284c7;
+    display: none;
+    margin: 2rem 0;
+}
+
+/* Dynamic User Cards Multi-Column Grid Layout */
+.user-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Card Element Styles */
+.profile-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.profile-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.profile-card h3 {
+    font-size: 1.2rem;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.profile-card p {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-bottom: 0.35rem;
+}
+
+.profile-card .user-email {
+    color: #0284c7;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.profile-card .company-tag {
+    margin-top: 0.75rem;
+    display: inline-block;
+    background-color: #cbd5e1;
+    color: #1e293b;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
