@@ -1,0 +1,139 @@
+/* Global Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+}
+
+.main-header {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.container {
+    max-width: 650px;
+    margin: 3rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #1e293b;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+/* Control Elements Form Bar Layout */
+.input-section {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#taskInput:focus {
+    border-color: #0284c7;
+}
+
+#addTaskBtn {
+    background-color: #0284c7;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#addTaskBtn:hover {
+    background-color: #0369a1;
+}
+
+/* Dynamic Interactive List Items Styles */
+#taskList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    background-color: #f1f5f9;
+    border-left: 4px solid #64748b;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Modifier state rule for completed item metrics */
+.task-item.completed {
+    border-left-color: #22c55e;
+    background-color: #f0fdf4;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.task-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    border: none;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.complete-btn {
+    background-color: #e2e8f0;
+    color: #334155;
+}
+
+.complete-btn:hover {
+    background-color: #cbd5e1;
+}
+
+.delete-btn {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.delete-btn:hover {
+    background-color: #fca5a5;
+}
