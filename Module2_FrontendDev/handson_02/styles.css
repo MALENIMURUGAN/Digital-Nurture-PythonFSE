@@ -1,138 +1,288 @@
-/* =========================================================================
-   HANDS-ON 2: ADVANCED LAYOUTS — FLEXBOX, CSS GRID & RESPONSIVENESS
-   Participant: MALENI
-   ========================================================================= */
+/* Reset */
 
-/* Global Clean Resets */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f1f5f9;
-    color: #1e293b;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Flexbox Header Positioning Layout */
-.main-header {
-    background-color: #0f172a;
-    color: #ffffff;
-    padding: 1.25rem 2rem;
+/* Header */
+
+header {
+    background: #1f4e79;
+    color: white;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding: 20px 50px;
+
+    position: sticky;
+    top: 0;
 }
 
-.nav-links a {
-    color: #94a3b8;
-    text-decoration: none;
-    margin-left: 1.5rem;
-    font-weight: 500;
+.logo {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
-.nav-links a:hover {
-    color: #38bdf8;
-}
-
-/* Flexbox Statistics Bar Implementation */
-.stats-bar {
+nav ul {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 2rem;
-}
-
-.stat-card {
-    background-color: #ffffff;
-    flex: 1 1 calc(25% - 1rem); 
-    min-width: 200px;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.stat-card h3 {
-    font-size: 0.9rem;
-    color: #64748b;
-    text-transform: uppercase;
-}
-
-.stat-card .stat-number {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #0284c7;
-    margin-top: 0.5rem;
-}
-
-/* Advanced Two-Column CSS Grid Layout System */
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr; 
-    gap: 1.5rem;
-    padding: 0 2rem 2rem 2rem;
-}
-
-.card {
-    background-color: #ffffff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-}
-
-.class-item {
-    border-left: 4px solid #0284c7;
-    padding-left: 1rem;
-    margin-top: 1rem;
-}
-
-.class-item h4 {
-    font-size: 1.1rem;
-    color: #0f172a;
-}
-
-.class-item p {
-    color: #64748b;
-    font-size: 0.9rem;
-    margin-top: 0.25rem;
-}
-
-.notification-card ul {
     list-style: none;
-    margin-top: 1rem;
+    gap: 30px;
 }
 
-.notification-card ul li {
-    margin-bottom: 0.75rem;
-    font-size: 0.95rem;
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* Page Base Sticky Footer Layout */
-.main-footer {
-    background-color: #0f172a;
-    color: #94a3b8;
+nav a:hover {
+    color: #ffd166;
+}
+
+/* Hero */
+
+#hero {
+
+    min-height: 40vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
-    padding: 1.5rem;
-    font-size: 0.9rem;
-    margin-top: auto;
+
+    background: white;
+
+    padding: 80px 20px;
 }
 
-/* Media Query for Responsive Mobile Devices */
-@media (max-width: 768px) {
-    .dashboard-grid {
-        grid-template-columns: 1fr; /* Collapses columns into a stack on mobile */
+#hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#hero p {
+
+    max-width: 700px;
+
+    margin-bottom: 25px;
+
+    color: #555;
+}
+
+button {
+
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #1f4e79;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+
+    background: #163956;
+
+    transform: scale(1.05);
+
+}
+
+/* Stats */
+
+#stats {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    gap: 20px;
+
+    padding: 40px;
+
+    background: #eef3f8;
+}
+
+.stat-item {
+
+    flex: 1;
+
+    background: white;
+
+    text-align: center;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.stat-item h3 {
+
+    font-size: 2rem;
+
+    color: #1f4e79;
+
+    margin-bottom: 10px;
+}
+
+/* Courses */
+
+#courses {
+
+    padding: 50px;
+}
+
+#courses h2 {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.course-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+
+    gap: 25px;
+}
+
+.course-card {
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.course-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.course-card h3 {
+
+    color: #1f4e79;
+
+    margin-bottom: 15px;
+}
+
+.course-card p {
+
+    margin-bottom: 20px;
+}
+
+.course-card span {
+
+    font-weight: bold;
+
+    color: #e67e22;
+}
+
+/* Footer */
+
+footer {
+
+    background: #1f4e79;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 50px;
+}
+
+/* Tablet */
+
+@media (max-width:768px){
+
+    header{
+
+        flex-direction: column;
+
+        gap: 20px;
     }
-    .stats-bar {
+
+    nav ul{
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    #stats{
+
         flex-direction: column;
     }
-    .stat-card {
-        flex: 1 1 100%;
+
+    #hero h1{
+
+        font-size: 2rem;
     }
+
+}
+
+/* Mobile */
+
+@media (max-width:480px){
+
+    header{
+
+        padding:20px;
+    }
+
+    #courses{
+
+        padding:20px;
+    }
+
+    #hero{
+
+        padding:50px 20px;
+    }
+
+    #hero h1{
+
+        font-size:1.7rem;
+    }
+
+    button{
+
+        width:100%;
+    }
+
 }
