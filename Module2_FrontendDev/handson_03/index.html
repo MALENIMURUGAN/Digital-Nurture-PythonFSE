@@ -1,43 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - Grade Management</title>
+    <title>Student Portal - HandsOn 3</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    <header class="main-header">
-        <h1>SmartLearn Portal</h1>
-        <p>Participant: MALENI</p>
+    <header>
+        <h1 class="logo">Student Portal</h1>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Grades</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="container">
-        <h2>Academic Grade Report</h2>
-        <p class="subtitle">Dynamic DOM Management System</p>
+    <main>
 
-        <div class="table-responsive">
-            <table id="gradesTable">
-                <thead>
-                    <tr>
-                        <th>Course Code</th>
-                        <th>Course Name</th>
-                        <th>Marks Obtained</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    </tbody>
-            </table>
-        </div>
+        <section id="hero">
+            <h1>Welcome to the Student Portal</h1>
 
-        <div class="summary-box">
-            <p>Average Marks: <span id="avgMarks">0.0</span></p>
-            <p>Overall Result: <span id="finalResult">-</span></p>
-        </div>
+            <p>
+                Explore your enrolled courses and academic progress.
+            </p>
+
+            <button>Explore Courses</button>
+        </section>
+
+        <section id="courses">
+
+            <h2>Available Courses</h2>
+
+            <!-- Step 40 -->
+            <input
+                type="text"
+                id="search-courses"
+                placeholder="Search courses..."
+            >
+
+            <!-- Step 42 -->
+            <button id="sort-btn">
+                Sort by Credits
+            </button>
+
+            <!-- Step 35 -->
+            <div class="course-grid">
+
+            </div>
+
+            <!-- Step 39 -->
+            <p id="total-credits"></p>
+
+            <!-- Step 43 -->
+            <div id="selected-course"></div>
+
+        </section>
+
     </main>
 
-    <script src="script.js"></script>
+    <footer>
+
+        <p>
+            © 2026 Student Portal
+        </p>
+
+    </footer>
+
+    <script type="module" src="app.js"></script>
+
 </body>
+
 </html>
