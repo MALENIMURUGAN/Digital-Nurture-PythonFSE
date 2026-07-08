@@ -1,0 +1,27 @@
+<h2>Available Courses</h2>
+
+<div *ngIf="loading">
+    Loading courses...
+</div>
+
+<div class="course-grid" *ngIf="!loading">
+
+    <app-course-card
+        *ngFor="let course of courses"
+        [course]="course"
+        (enroll)="enrollCourse($event)">
+    </app-course-card>
+
+</div>
+
+<div *ngIf="selectedCourse" class="selected-course">
+
+    <h3>Selected Course</h3>
+
+    <p>{{ selectedCourse.name }}</p>
+
+    <p>{{ selectedCourse.code }}</p>
+
+    <p>{{ selectedCourse.grade }}</p>
+
+</div>
