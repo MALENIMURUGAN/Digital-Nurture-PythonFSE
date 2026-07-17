@@ -10,45 +10,50 @@
 
   <CourseCard
     v-for="course in filteredCourses"
-    :key="course.code"
-    :name="course.name"
-    :code="course.code"
-    :credits="course.credits"
-    :grade="course.grade"
+    :key="course.id"
+    :name="course.title"
+    :code="'CSE-' + course.id"
+    :credits="3"
+    :grade="'A'"
     @enroll="store.enroll(course)"
   />
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from "vue";
 
-import Header from '../components/Header.vue'
-import CourseCard from '../components/CourseCard.vue'
-import { useEnrollmentStore } from '../stores/enrollment'
+import Header from "../components/Header.vue";
+import CourseCard from "../components/CourseCard.vue";
 
-const store = useEnrollmentStore()
+import { useEnrollmentStore } from "../stores/enrollment";
+import { getAllCourses } from "../api/courseApi";
 
-const searchTerm = ref('')
+const store = useEnrollmentStore();
 
-const courses = ref([
-  { name:'Angular', code:'ANG101', credits:4, grade:'A' },
-  { name:'React', code:'REA102', credits:3, grade:'A+' },
-  { name:'Python', code:'PY103', credits:4, grade:'A' },
-  { name:'Java', code:'JAVA104', credits:3, grade:'B+' },
-  { name:'SQL', code:'SQL105', credits:2, grade:'A' }
-])
+const searchTerm = ref("");
+
+const courses = ref([]);
+
+onMounted(async () => {
+  try {
+    courses.value = await getAllCourses();
+    console.log(courses.value);
+  } catch (error) {
+    console.error(error);
+  }
+});
 
 const filteredCourses = computed(() =>
   courses.value.filter(course =>
-    course.name.toLowerCase().includes(searchTerm.value.toLowerCase())
+    course.title.toLowerCase().includes(searchTerm.value.toLowerCase())
   )
-)
+);
 </script>
 
 <style scoped>
-input{
-  width:300px;
-  padding:10px;
-  margin:20px;
+input {
+  width: 300px;
+  padding: 10px;
+  margin: 20px;
 }
 </style>
