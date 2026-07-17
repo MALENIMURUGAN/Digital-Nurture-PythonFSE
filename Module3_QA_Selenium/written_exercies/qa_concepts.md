@@ -2,8 +2,8 @@
 
 ## Student Details
 
-- Name:
-- Register Number:
+- Name:Maleni M
+- Register Number:212223040110
 - Module: QA Concepts & Selenium Basics
 - Hands-On: 1
 
